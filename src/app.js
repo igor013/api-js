@@ -3,16 +3,24 @@ import cors from "cors";
 import routes from "./routes.js";
 import "./database/index"
 
-const app = express();
 
-app.use(cors());
+class App {
+    constructor() {
+        this.server = express();
+        this.middlewares();
+        this.routes();
+    }
+    middlewares() {
+        this.server.use(cors());
+        this.server.use(express.json());
 
-app.use(routes);
+    }
 
-//Implementacao de Middleware para Rotas Invalidas
-// comentario Gill
-    app.use(function (req, res, next) {
-        res.status(404).send("Não encontrado a rota digitada!")
-    })
 
-export default app;
+
+    routes() {
+        this.server.use(routes);
+    }
+
+}
+export default new App().server
