@@ -1,5 +1,6 @@
 import Sequelize from "sequelize";
 import User from "../models/User";
+import Address from "../models/Address";
 
 class UserController {
     async index(req, res) {
@@ -54,7 +55,7 @@ class UserController {
         }
     }
 
-
+   
 
 
 }
