@@ -7,9 +7,11 @@ const routes = new Router();
 routes.get("/", HomeController.index);
 
 routes.get("/users", UserController.index);
+routes.get("/usersdel", UserController.listusersdel);
 routes.post("/users", UserController.store);
 routes.put("/users/:id", UserController.update);
 routes.delete("/users/:id", UserController.destroy);
+
 
 routes.get("/address", AddressController.index);
 routes.post("/address", AddressController.store);
