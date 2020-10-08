@@ -5,7 +5,7 @@ module.exports = {
     return queryInterface.bulkInsert('cad_users', [
 
 
-     { id_city: 1, name: 'admin', mail: 'admin@mail.com', age:29, pass: '123456', created_at: new Date(), updated_at: new Date()},
+     { id_city: 1, name: 'admin', mail: 'admin@mail.com', age:29, password_hash: '$2a$08$EpUMqWedwhg1IvN2oCTz0uRCFf64aYzP/0BmkKuSUZtgfTzUxBKdu', created_at: new Date(), updated_at: new Date()},
 
 
     ], {});

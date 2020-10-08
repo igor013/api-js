@@ -29,10 +29,9 @@ module.exports = {
         allowNull: false,
         
       },
-      pass:{
+      password_hash: {
         type: Sequelize.STRING,
         allowNull: false,
-      
       },
       created_at:{
         type: Sequelize.DATE,
