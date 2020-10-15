@@ -2,9 +2,11 @@ import {Router} from "express";
 import HomeController from "./app/controlles/HomeController.js"
 import UserController from "./app/controlles/UserController.js";
 import AddressController from "./app/controlles/AddressController.js";
+import SessionController from "./app/controlles/SessionController.js";
 const routes = new Router();
 
 routes.get("/", HomeController.index);
+routes.post("/sessions", SessionController.store);
 
 routes.get("/users", UserController.index);
 routes.get("/usersdel", UserController.listusersdel);
