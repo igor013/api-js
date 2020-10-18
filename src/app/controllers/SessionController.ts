@@ -1,7 +1,8 @@
+import { Request, Response } from 'express';
 // import Sequelize from "sequelize";
 import User from "../models/User.js";
 class SessionController {
-    async store(req, res) {
+    async store(req: Request, res: Response) {
         const { mail, password } = req.body;
         //    console.log(mail)
 try {

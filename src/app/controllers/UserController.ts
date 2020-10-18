@@ -1,9 +1,10 @@
+import { Request, Response } from 'express';
 import Sequelize from "sequelize";
 import User from "../models/User";
 import Address from "../models/Address";
 
 class UserController {
-    async index(req, res) {
+    async index(req: Request, res: Response) {
         let fleag = req.query.status; 
         if (!fleag){
             fleag = "A"
@@ -29,7 +30,7 @@ class UserController {
 
         }
     }
-    async store(req, res) {
+    async store(req: Request, res: Response) {
 
         if (!req.body) {
             return res.status(400).json({ error: "Nenhum dado enviado" })
@@ -48,7 +49,7 @@ class UserController {
             return res.status(400).json({ error: "ocorreu um erro" })
         }
     }
-    async update(req, res) {
+    async update(req: Request, res: Response) {
         if (!req.body) {
             return res.status(400).json({ error: "Nenhum dado enviado" })
         }
@@ -62,7 +63,7 @@ class UserController {
             return res.status(400).json({ error: "ocorreu um erro" })
         }
     }
-    async destroy(req, res) {
+    async destroy(req: Request, res: Response) {
         if (!req.params.id) {
             return res.status(400).json({ error: "Nenhum  enviado" })
         }
@@ -83,7 +84,7 @@ class UserController {
         }
     }
 
-    async listusersdel(req, res) {
+    async listusersdel(req: Request, res: Response) {
         try {
            let G = await User.findAll({
                where:{

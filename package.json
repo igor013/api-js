@@ -4,24 +4,48 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/server.js",
-    "start": "node dist/server.js",
-    "build": "sucrase ./src -d ./dist --transforms imports && gulp copy-hbs"
+    "devjs": "nodemon src/server.js",
+    "startjs": "node dist/server.js",
+    "buildjs": "sucrase ./src -d ./dist --transforms imports && gulp copy-hbs",
+    "dev": "ts-node-dev src/server.ts",
+    "start": "node .",
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "tsc",
+    "prestart": "npm run build"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "immutable": "^4.0.0-rc.12",
     "mysql2": "^2.2.5",
-    "sequelize": "^5.21.2"
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "sequelize": "^5.21.2",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0",
+    "uuid": "^8.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.0",
+    "@babel/preset-env": "^7.10.2",
+    "@types/cors": "^2.8.8",
+    "@types/express": "^4.17.6",
+    "@types/node": "^14.0.5",
+    "@types/parcel-bundler": "^1.12.1",
+    "@types/react": "^16.9.35",
+    "@types/socket.io": "^2.1.8",
+    "@types/uuid": "^8.0.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "nodemon": "^2.0.4",
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.26.7",
     "sequelize-cli": "^5.5.1",
-    "sucrase": "^3.15.0"
+    "sucrase": "^3.15.0",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.3"
   }
 }

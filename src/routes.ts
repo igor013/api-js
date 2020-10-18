@@ -1,9 +1,10 @@
 import {Router} from "express";
-import HomeController from "./app/controlles/HomeController.js"
-import UserController from "./app/controlles/UserController.js";
-import AddressController from "./app/controlles/AddressController.js";
-import SessionController from "./app/controlles/SessionController.js";
-const routes = new Router();
+import HomeController from "./app/controllers/HomeController"
+import UserController from "./app/controllers/UserController";
+import AddressController from "./app/controllers/AddressController";
+import SessionController from "./app/controllers/SessionController";
+
+const routes: Router = Router();
 
 routes.get("/", HomeController.index);
 routes.post("/sessions", SessionController.store);
